@@ -1,0 +1,8 @@
+<h2 class="title is-size-2">Full List of Video Games</h1>
+<ul>
+  <% @video_game_titles.each do | vgt |%>
+    <li>
+      <%= link_to vgt.name, vgt %>
+    </li>
+  <% end %>
+</ul>

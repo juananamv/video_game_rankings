@@ -1,0 +1,33 @@
+<h2 class="tile is-size-2"><%= @video_game_title.name %></h2>
+<p><strong>Platforms: </strong>
+  <% @video_game_title.platforms.each do |i|%>
+    <%= i.name %>
+  <% end %>
+</p>
+<p>
+  <strong>Total Sales: </strong> <%= @video_game_title.total_sales %> million
+</p>
+<p>
+  <strong>Genre: </strong> <%= @video_game_title.genre.name %>
+</p>
+<p>
+  <strong>Average Rating: </strong><%= @video_game_title.average_rating %>
+</p>
+
+<br/>
+<h4 class="title is-size-4">Iteration Breakdown</h4>
+<% @video_game_title.video_game_iterations.each do |i|%>
+<div>
+  <h5><strong class="is-size-5"><%= i.platform.name %></strong></h5>
+  <p>
+    <strong>Release Year: </strong> <%= i.year %>
+  </p>
+  <p>
+    <strong>Sales: </strong> <%= i.sales %> million
+  </p>
+  <p>
+    <strong>Rating: </strong> <%= i.rating %>
+  </p>
+</div>
+<br/>
+<% end %>
