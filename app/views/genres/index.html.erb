@@ -1,9 +1,10 @@
 <h2 class="title is-size-2">Video Games by Genre</h2>
 <% @genres.each do |g| %>
-  <h4 class="title is-size-4"><%= g.name %></h4>
+  <h4 class="is-size-4"><%= g.name %></h4>
   <ul>
     <% g.video_game_titles.each do |vgt| %>
-      <li><%= vgt.name %></li>
+      <li><%= link_to vgt.name, vgt %></li>
     <% end %>
   </ul>
+  </br>
 <% end %>

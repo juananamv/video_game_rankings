@@ -5,6 +5,9 @@
   <% end %>
 </p>
 <p>
+  <strong>Publisher: </strong> <%= link_to @video_game_title.publisher.name, @video_game_title.publisher %>
+</p>
+<p>
   <strong>Total Sales: </strong> <%= @video_game_title.total_sales %> million
 </p>
 <p>
@@ -31,3 +34,5 @@
 </div>
 <br/>
 <% end %>
+
+<%= link_to "Back", video_game_titles_path %>
