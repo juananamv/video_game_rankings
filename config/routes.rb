@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres, only: %i[index]
   resources :publishers, only: %i[index show]
 
   # placeholder
