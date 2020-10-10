@@ -1,4 +1,9 @@
-<h1>Publishers</h1>
-<% @publishers.each do |publisher| %>
-<p><%= publisher.name %></p>
-<% end %>
+<h2 class="title is-size-2">Publishers</h2>
+<div>
+  <% @publishers.each do |publisher| %>
+  <p>
+    <%= link_to publisher.name, publisher %>
+  </p>
+  <% end %>
+</div>
+

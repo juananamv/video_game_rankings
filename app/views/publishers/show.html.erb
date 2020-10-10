@@ -1,2 +1,8 @@
-<h1>Publishers#show</h1>
-<p>Find me in app/views/publishers/show.html.erb</p>
+<h2 class="title is-size-2"><%= @publisher.name %></h2>
+<h3 class="is-size-3">List of Video Game Titles by: <strong><%= @publisher.name %></strong></h3>
+<ul>
+  <% @publisher.video_game_titles.each do |title|%>
+    <li><%= title.name %></li>
+  <% end %>
+</ul>
+
