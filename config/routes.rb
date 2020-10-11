@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :platforms, only: %i[index]
-  resources :genres, only: %i[index]
+  resources :platforms, only: %i[index show]
+  resources :genres, only: %i[index show]
   resources :publishers, only: %i[index show]
   resources :video_game_titles, only: %i[index show]
   get '/about', to: 'about#index'
