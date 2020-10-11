@@ -22,9 +22,9 @@
             <div class="navbar-item"><%= link_to 'Video Games', video_game_titles_path %></div>
             <div class="navbar-item"><%= link_to 'About', about_path %></div>
           </div>
-          <form>
+          <form action="/video_game_titles" method="get">
           <div class="navbar-end">
-              <input class="input navbar-item" type="text" placeholder="Search Video Game Title..."/>
+              <input class="input navbar-item" type="text" id="query" name="query" placeholder="Search Video Game Title..."/>
               <input class="button is-primary" type="submit" value="Search">
           </div>
           </form>

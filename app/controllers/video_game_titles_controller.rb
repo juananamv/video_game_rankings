@@ -1,6 +1,12 @@
 class VideoGameTitlesController < ApplicationController
   def index
-    @video_game_titles = VideoGameTitle.order("name ASC")
+    if (params["query"].nil? || params["query"] == '')
+      @video_game_titles = VideoGameTitle.order('name ASC')
+      @header = "Full List of Titles"
+    else
+      @video_game_titles = VideoGameTitle.where("name LIKE '%#{params['query']}%'")
+      @header = "#{@video_game_titles.count} results found for #{params['query']}"
+    end
   end
 
   def show
