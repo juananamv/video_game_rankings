@@ -4,6 +4,6 @@ class PlatformsController < ApplicationController
   end
 
   def show
-    @platform = VideoGameTitle.includes(:vide_game_titles).find(params["id"])
+    @platform = Platform.includes(:video_game_titles).find(params["id"])
   end
 end

@@ -10,10 +10,11 @@
         </tr>
       </thead>
       <tbody>
-        <% @platforms.each do | platform |%>
+        <% @platforms.order("name ASC").each do | platform |%>
         <tr>
           <td><%= platform.name %></td>
           <td><%= platform.video_game_titles.count %></td>
+          <td><%= link_to "Link", platform %></td>
         </tr>
         <% end %>
       </tbody>

@@ -5,7 +5,6 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Publisher</th>
           <th>Link</th>
         </tr>
       </thead>
@@ -13,7 +12,6 @@
         <% @video_game_titles.each do | vgt |%>
         <tr>
           <td><%= vgt.name %></td>
-          <td><%= vgt.publisher.name %></td>
           <td><%= link_to "Link", vgt %></td>
         </tr>
         <% end %>
