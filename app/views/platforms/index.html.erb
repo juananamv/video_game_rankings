@@ -1,0 +1,9 @@
+<h2 class="title is-size-2">Video Games by Platform</h2>
+<% @platforms.each do |p| %>
+  <h4 class="is-size-4"><%= p.name %></h4>
+  <ul>
+    <% p.video_game_titles.each do |vgt| %>
+      <li><%= link_to vgt.name, vgt %></li>
+    <% end %>
+  </ul>
+<% end %>

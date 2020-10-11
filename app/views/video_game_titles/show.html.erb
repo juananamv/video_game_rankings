@@ -1,4 +1,5 @@
-<h2 class="tile is-size-2"><%= @video_game_title.name %></h2>
+<div class="ml-5">
+<h2 class="title is-size-2"><%= @video_game_title.name %></h2>
 <p><strong>Platforms: </strong>
   <% @video_game_title.platforms.each do |i|%>
     <%= i.name %>
@@ -36,3 +37,4 @@
 <% end %>
 
 <%= link_to "Back", video_game_titles_path %>
+</div>

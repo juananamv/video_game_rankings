@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :platforms, only: %i[index]
   resources :genres, only: %i[index]
   resources :publishers, only: %i[index show]
   resources :video_game_titles, only: %i[index show]
