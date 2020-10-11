@@ -12,16 +12,22 @@
 
   <body>
     <header>
-        <h1 class="title is-size-1">Video Game Rankings</h1>
-        <nav>
-          <ul>
-            <li><%= link_to 'Home', home_path %></li>
-            <li><%= link_to 'Publishers', publishers_path %></li>
-            <li><%= link_to 'Genres', genres_path %></li>
-            <li><%= link_to 'Video Games', video_game_titles_path %></li>
-            <li><%= link_to 'About', about_path %></li>
-          </ul>
-        </nav>
+        <h1 class="title is-size-1 mb-3">Video Game Rankings</h1>
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="navbar-item"><%= link_to 'Home', home_path %></div>
+            <div class="navbar-item"><%= link_to 'Publishers', publishers_path %></div>
+            <div class="navbar-item"><%= link_to 'Genres', genres_path %></div>
+            <div class="navbar-item"><%= link_to 'Video Games', video_game_titles_path %></div>
+            <div class="navbar-item"><%= link_to 'About', about_path %></div>
+          </div>
+          <form>
+          <div class="navbar-end">
+              <input class="input navbar-item" type="text" placeholder="Search Video Game Title..."/>
+              <input class="button is-primary" type="submit" value="Search">
+          </div>
+          </form>
+        </div>
     </header>
     <%= yield %>
   </body>
