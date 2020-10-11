@@ -1,13 +1,22 @@
-<h2 class="title is-size-2">Top Publishers</h2>
-<ol>
-  <% @publishers.each do |publisher| %>
-    <li><%= publisher.name %></li>
-  <% end %>
-</ol>
+<div class="columns is-centered">
+  <div class="column is-one-quarter">
+    <h2 class="title is-size-2">Top Publishers</h2>
+    <ol>
+      <% @publishers.each do |publisher| %>
+        <li class="ml-5"><%= link_to publisher.name, publisher %> <%= publisher.video_game_title_count %> titles</li>
+      <% end %>
+    </ol>
+    <p class="mt-5 is-size-5"><%= link_to "Full list of Publishers", publishers_path%></p>
+  </div>
 
-<h2 class="title is-size-2">Top Video Game Titles</h2>
-<ol>
-  <% @video_game_titles.each do |vgt| %>
-    <li><%= vgt.name %></li>
-  <% end %>
-</ol>
+  <div class="column is-one-quarter">
+    <h2 class="title is-size-2">Top Video Game Titles</h2>
+    <ol>
+      <% @video_game_titles.each do |vgt| %>
+        <li class="ml-5"><%= link_to vgt.name, vgt %> (<%= vgt.total_sales %> million)</li>
+      <% end %>
+    </ol>
+    <p class="mt-5 is-size-5"><%= link_to "Full list of Titles", video_game_titles_path%></p>
+  </div>
+
+</div>
