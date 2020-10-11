@@ -1,9 +1,23 @@
-<h2 class="title is-size-2">Publishers</h2>
-<div>
-  <% @publishers.each do |publisher| %>
-  <p>
-    <%= link_to publisher.name, publisher %>
-  </p>
-  <% end %>
+<div class="columns is-centered">
+  <div class="column is-half">
+  <h2 class="title is-size-2">Publishers</h1>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number of Games</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @publishers.each do | publisher |%>
+        <tr>
+          <td><%= publisher.name %></td>
+          <td><%= publisher.video_game_titles.count %></td>
+          <td><%= link_to "Link", publisher %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-

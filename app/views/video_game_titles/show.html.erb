@@ -1,40 +1,46 @@
-<div class="ml-5">
-<h2 class="title is-size-2"><%= @video_game_title.name %></h2>
-<p><strong>Platforms: </strong>
-  <% @video_game_title.platforms.each do |i|%>
-    <%= i.name %>
-  <% end %>
-</p>
-<p>
-  <strong>Publisher: </strong> <%= link_to @video_game_title.publisher.name, @video_game_title.publisher %>
-</p>
-<p>
-  <strong>Total Sales: </strong> <%= @video_game_title.total_sales %> million
-</p>
-<p>
-  <strong>Genre: </strong> <%= @video_game_title.genre.name %>
-</p>
-<p>
-  <strong>Average Rating: </strong><%= @video_game_title.average_rating %>
-</p>
 
-<br/>
-<h4 class="title is-size-4">Iteration Breakdown</h4>
-<% @video_game_title.video_game_iterations.each do |i|%>
-<div>
-  <h5><strong class="is-size-5"><%= i.platform.name %></strong></h5>
-  <p>
-    <strong>Release Year: </strong> <%= i.year %>
-  </p>
-  <p>
-    <strong>Sales: </strong> <%= i.sales %> million
-  </p>
-  <p>
-    <strong>Rating: </strong> <%= i.rating %>
-  </p>
-</div>
-<br/>
-<% end %>
 
-<%= link_to "Back", video_game_titles_path %>
+<div class="columns is-centered">
+  <div class="column is-one-third">
+    <div class="ml-5">
+      <h2 class="title is-size-2"><%= @video_game_title.name %></h2>
+      <p>
+        <strong>Publisher: </strong> <%= link_to @video_game_title.publisher.name, @video_game_title.publisher %>
+      </p>
+      <p>
+        <strong>Total Sales: </strong> <%= @video_game_title.total_sales %> million
+      </p>
+      <p>
+        <strong>Genre: </strong> <%= @video_game_title.genre.name %>
+      </p>
+      <p>
+        <strong>Average Rating: </strong><%= @video_game_title.average_rating %>
+      </p>
+      <br/>
+      <h4 class="title is-size-4">Iteration Breakdown</h4>
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Release Year</th>
+            <th>Sales</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @video_game_title.video_game_iterations.each do |i|%>
+          <tr>
+            <td><%= i.platform.name %></td>
+            <td><%= i.year %></td>
+            <td><%= i.sales %> million</td>
+            <td><%= i.rating %></td>
+
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "Back", video_game_titles_path %>
+    </div>
+  </div>
 </div>
+

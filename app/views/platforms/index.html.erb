@@ -1,9 +1,22 @@
-<h2 class="title is-size-2">Video Games by Platform</h2>
-<% @platforms.each do |p| %>
-  <h4 class="is-size-4"><%= p.name %></h4>
-  <ul>
-    <% p.video_game_titles.each do |vgt| %>
-      <li><%= link_to vgt.name, vgt %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="columns is-centered">
+  <div class="column is-half">
+  <h2 class="title is-size-2">Platforms</h1>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number of Games</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @platforms.each do | platform |%>
+        <tr>
+          <td><%= platform.name %></td>
+          <td><%= platform.video_game_titles.count %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
