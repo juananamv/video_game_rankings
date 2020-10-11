@@ -1,0 +1,13 @@
+<h2 class="title is-size-2">Top Publishers</h2>
+<ol>
+  <% @publishers.each do |publisher| %>
+    <li><%= publisher.name %></li>
+  <% end %>
+</ol>
+
+<h2 class="title is-size-2">Top Video Game Titles</h2>
+<ol>
+  <% @video_game_titles.each do |vgt| %>
+    <li><%= vgt.name %></li>
+  <% end %>
+</ol>
