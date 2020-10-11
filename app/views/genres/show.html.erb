@@ -1,0 +1,22 @@
+<div class="columns is-centered">
+  <div class="column is-half">
+    <h2 class="title is-size-2"><%= @genre.name %></h2>
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @genre.video_game_titles.order("name ASC").each do |vgt|%>
+            <tr>
+              <td><%= vgt.name %></td>
+              <td><%= link_to "Link", vgt %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <%= link_to "Back", video_game_titles_path %>
+  </div>
+</div>
