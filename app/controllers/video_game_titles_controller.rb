@@ -10,6 +10,6 @@ class VideoGameTitlesController < ApplicationController
   end
 
   def show
-    @video_game_title = VideoGameTitle.includes(:video_game_iterations).find(params["id"])
+    @video_game_title = VideoGameTitle.find(params["id"])
   end
 end
