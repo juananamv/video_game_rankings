@@ -1,6 +1,6 @@
 class VideoGameTitlesController < ApplicationController
   def index
-    if (params["query"].nil? || params["query"] == '')
+    if params["query"].nil? || params["query"] == ''
       @video_game_titles = VideoGameTitle.order('name ASC')
       @header = "Full List of Titles"
     else

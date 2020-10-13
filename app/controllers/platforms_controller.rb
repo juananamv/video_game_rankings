@@ -1,9 +1,11 @@
 class PlatformsController < ApplicationController
   def index
-    @platforms = Platform.includes(:video_game_titles)
+    @platforms = Platform.left_outer_joins(:video_game_titles)
+                         .select("platforms.*, COUNT(video_game_titles.id) AS title_count")
+                         .group("platforms.id")
   end
 
   def show
-    @platform = Platform.includes(:video_game_titles).find(params["id"])
+    @platform = Platform.find(params["id"])
   end
 end

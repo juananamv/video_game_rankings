@@ -13,7 +13,7 @@
         <% @publishers.each do | publisher |%>
         <tr>
           <td><%= publisher.name %></td>
-          <td><%= publisher.video_game_titles.count %></td>
+          <td><%= publisher.title_count %></td>
           <td><%= link_to "Link", publisher %></td>
         </tr>
         <% end %>
